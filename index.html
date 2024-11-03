@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Conversor de Moedas</title>
+  <style>
+    /* Definindo estilo geral da página */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    /* Centralizando o contêiner */
+    .container {
+      background-color: #ffffff;
+      padding: 30px 50px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+    /* Estilo do cabeçalho */
+    h2 {
+      color: #0066cc;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    /* Estilo dos rótulos e campos */
+    label {
+      font-size: 16px;
+      margin: 10px 0 5px;
+      display: block;
+    }
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    /* Estilo do botão */
+    button {
+      background-color: #0066cc;
+      color: #ffffff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #005bb5;
+    }
+    /* Estilo do rodapé */
+    footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Conversor de Moedas</h2>
+    
+    <!-- Entrada de valor a ser convertido -->
+    <label for="valor">Valor:</label>
+    <input type="number" id="valor" value="1" required>
+
+    <!-- Seleção de moedas -->
+    <label for="moedaOrigem">De:</label>
+    <select id="moedaOrigem">
+      <option value="USD" selected>Dólar</option>
+      <option value="EUR">Euro</option>
+      <option value="BRL">Real</option>
+    </select>
+
+    <label for="moedaDestino">Para:</label>
+    <select id="moedaDestino">
+      <option value="BRL" selected>Real</option>
+      <option value="USD">Dólar</option>
+      <option value="EUR">Euro</option>
+    </select>
+
+    <!-- Taxa de câmbio -->
+    <label for="taxaCambio">Taxa de Câmbio:</label>
+    <input type="number" id="taxaCambio" value="5.87" step="0.01" required>
+
+    <!-- Botão de conversão -->
+    <button onclick="converterMoeda()">Converter</button>
+
+    <!-- Resultado da conversão -->
+    <h3 id="resultado"></h3>
+
+    <footer>Desenvolvido por: Daniel Jovenir Espindola, Rafael Batistti Munarin</footer>
+  </div>
+
+  <script>
+    // Função pura para validar entradas: retorna true se válido, false se não
+    const validarEntrada = (valor) => {
+      return valor > 0 && !isNaN(valor);
+    };
+
+    // Função pura para converter moeda: aplica a taxa ao valor de entrada
+    const calcularConversao = (valor, taxa) => {
+      return valor * taxa;
+    };
+
+    // Função principal para a conversão de moedas
+    function converterMoeda() {
+      // Obtendo valores da interface
+      const valor = parseFloat(document.getElementById("valor").value);
+      const taxaCambio = parseFloat(document.getElementById("taxaCambio").value);
+      const moedaOrigem = document.getElementById("moedaOrigem").value;
+      const moedaDestino = document.getElementById("moedaDestino").value;
+
+      // Validando as entradas usando uma função de ordem superior (filter)
+      const entradasValidas = [valor, taxaCambio].filter(validarEntrada);
+
+      if (entradasValidas.length !== 2 || moedaOrigem === moedaDestino) {
+        document.getElementById("resultado").innerText = "Entrada inválida! Verifique os dados.";
+        return;
+      }
+
+      // Calculando o valor convertido (nova versão do valor, sem alterar o original)
+      const valorConvertido = calcularConversao(valor, taxaCambio);
+
+      // Exibindo o resultado de forma precisa com duas casas decimais
+      document.getElementById("resultado").innerText = 
+        `Valor convertido: ${valorConvertido.toFixed(2)} ${moedaDestino}`;
+    }
+  </script>
+</body>
+</html>
