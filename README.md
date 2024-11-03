@@ -4,7 +4,7 @@ Este projeto é um conversor de moedas criado para a disciplina de **Linguagem d
 
 ---
 
-## 📋 Funcionalidades
+## Funcionalidades
 
 1. **Conversão entre Moedas**: Permite a conversão de valores entre USD, EUR, e BRL.
 2. **Taxa de Câmbio Personalizada**: O usuário pode informar a taxa de câmbio ou utilizar a taxa padrão (USD para BRL: 5.87).
@@ -13,14 +13,14 @@ Este projeto é um conversor de moedas criado para a disciplina de **Linguagem d
 
 ---
 
-## ⚙️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **HTML e CSS**: Interface do usuário, com layout responsivo e estilização profissional.
 - **JavaScript**: Programação funcional com ênfase em funções puras e manipulação de dados.
 
 ---
 
-## 📐 Estrutura do Código
+## Estrutura do Código
 
 O código utiliza três funções principais que seguem os princípios de programação funcional:
 
@@ -40,7 +40,7 @@ O código utiliza três funções principais que seguem os princípios de progra
 
 ---
 
-## 🎓 Conceitos de Programação Funcional
+## Conceitos de Programação Funcional
 
 1. **Funções Puras**: Todas as funções são puras, ou seja, cada função retorna o mesmo resultado para os mesmos parâmetros, sem causar efeitos colaterais.
 
@@ -50,7 +50,7 @@ O código utiliza três funções principais que seguem os princípios de progra
 
 ---
 
-## 💰 Exemplo de Uso
+## Exemplo de Uso
 
 - **Valor de entrada**: 1
 - **Moeda de origem**: USD
@@ -62,7 +62,7 @@ Valor convertido: 5,87 BRL
 
 ---
 
-## 🔧 Instruções de Instalação e Execução
+## Instruções de Instalação e Execução
 
 1. **Abra o arquivo HTML**: Navegue até o diretório do projeto e abra o arquivo `index.html` em um navegador de sua preferência.
 
@@ -74,7 +74,7 @@ Valor convertido: 5,87 BRL
 
 ---
 
-## 🚀 Exemplos de Conversão com Outras Taxas
+## Exemplos de Conversão com Outras Taxas
 
 - **USD para EUR**: Taxa de câmbio de exemplo: 0,91
 - **EUR para BRL**: Taxa de câmbio de exemplo: 6,44
@@ -83,11 +83,7 @@ Esses valores são configuráveis na interface da aplicação, permitindo que o 
 
 ---
 
-## ✍️ Créditos e Contribuição
+## Créditos e Contribuição
 
 - Desenvolvido por: Daniel Jovenir Espindola
 - Este projeto foi criado para fins educacionais e para demonstrar o uso de programação funcional.
-
----
-
-**Observação**: Todo o código foi desenvolvido com base nos conceitos da programação funcional, e documentado para que os princípios utilizados possam ser claramente identificados e compreendidos.
