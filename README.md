@@ -85,7 +85,7 @@ Esses valores são configuráveis na interface da aplicação, permitindo que o 
 
 ## ✍️ Créditos e Contribuição
 
-- Desenvolvido por: Daniel Jovenir Espindola e Rafael Batistti Munarin
+- Desenvolvido por: Daniel Jovenir Espindola
 - Este projeto foi criado para fins educacionais e para demonstrar o uso de programação funcional.
 
 ---
